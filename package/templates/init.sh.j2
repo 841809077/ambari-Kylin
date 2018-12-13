@@ -1,0 +1,8 @@
+#!/bin/bash
+export KYLIN_HOME={{kylin_install_dir}}
+mkdir -p $KYLIN_HOME/conf/hadoop_conf
+ln -sf /etc/hadoop/conf/core-site.xml $KYLIN_HOME/conf/hadoop_conf/core-site.xml
+ln -sf /etc/hbase/conf/hbase-site.xml $KYLIN_HOME/conf/hadoop_conf/hbase-site.xml
+ln -sf /etc/hadoop/conf/hdfs-site.xml $KYLIN_HOME/conf/hadoop_conf/hdfs-site.xml
+ln -sf /etc/hadoop/conf/yarn-site.xml $KYLIN_HOME/conf/hadoop_conf/yarn-site.xml
+ln -sf  /etc/hive/conf/hive-site.xml $KYLIN_HOME/conf/hadoop_conf/hive-site.xml
