@@ -66,7 +66,7 @@ Ambari集成Apache Kylin服务
 
 > nginx在CentOS-6 64位系统启动失败问题解决方案
 
-待整理
+[点击这里获取解决方案](https://841809077.github.io/2018/05/21/Nginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html#5-ngnix%E5%9C%A8CentOS-6%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99)
 
 ---
 
