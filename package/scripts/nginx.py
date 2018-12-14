@@ -41,6 +41,7 @@ class NginxMaster(Script):
     def restart(self, env):
         import params
         env.set_params(params)
+        self.configure(env)
         cmd = format("cd {nginx_install_dir}; sbin/nginx -s reload")
         Execute(cmd)
 

@@ -56,7 +56,7 @@
 
     <property>
         <name>kylin_properties</name>
-        <description>This is the jinja template for init.conf file</description>
+        <description>This is the template for kylin.properties file</description>
         <value>
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
@@ -425,6 +425,11 @@ kylin.engine.spark-conf.spark.master=yarn
 ##kylin.source.jdbc.sqoop-home=
 ##kylin.source.jdbc.filed-delimiter=|
         </value>
+        <value-attributes>
+            <type>content</type>
+            <show-property-name>true</show-property-name>
+        </value-attributes>
+        <on-ambari-upgrade add="true"/>
     </property>
 
 </configuration>

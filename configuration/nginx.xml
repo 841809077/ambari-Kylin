@@ -24,7 +24,7 @@
     </property>
     <property>
         <name>nginx_conf</name>
-        <description>This is the jinja template for nginx.conf file</description>
+        <description>This is the template for nginx.conf file</description>
         <value>
 #user  nobody;
 worker_processes  auto;
@@ -79,10 +79,15 @@ http {
 
     }
     upstream kylin.com{
+        ip_hash;
         {{kylin_servers}}
     }
 }
         </value>
+        <value-attributes>
+            <type>content</type>
+            <show-property-name>true</show-property-name>
+        </value-attributes>
     </property>
 
 </configuration>

@@ -56,9 +56,9 @@ Ambari集成Apache Kylin服务
 
 > 效果图
 
-![1544715590339](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1544715590339.png)
+![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181214222045.jpg)
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181213233957.jpg)
+![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181214223927.png)
 
 ![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181213234222.jpg)
 

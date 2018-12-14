@@ -39,6 +39,9 @@ class KylinQuery(Script):
         # Ensure all files owned by kylin user:group
         cmd = format("chown -R {kylin_user}:{kylin_group} {kylin_install_dir}")
         Execute(cmd)
+        # create hadoop_conf_dir
+        cmd = format("sh {tmp_dir}/kylin_init.sh")
+        Execute(cmd, user=params.kylin_user)
 
     def configure(self, env):
         import params
@@ -55,9 +58,6 @@ class KylinQuery(Script):
              group=params.kylin_group,
              mode=0o700
              )
-        # create hadoop_conf_dir
-        cmd = format("sh {tmp_dir}/kylin_init.sh")
-        Execute(cmd, user=params.kylin_user)
 
     def start(self, env):
         import params
