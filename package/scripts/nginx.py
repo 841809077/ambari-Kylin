@@ -27,6 +27,7 @@ class NginxMaster(Script):
         import params
         env.set_params(params)
         File(format("{nginx_install_dir}/conf/nginx.conf"), content=InlineTemplate(params.nginx_conf))
+        Execute(format("chown -R root:root {nginx_log_dir} {nginx_pid_dir}"))
 
     def start(self, env):
         import params

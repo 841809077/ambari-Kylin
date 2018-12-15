@@ -58,6 +58,7 @@ class KylinMaster(Script):
              group=params.kylin_group,
              mode=0o700
              )
+        Execute(format("chown -R {kylin_user}:{kylin_group} {kylin_log_dir} {kylin_pid_dir}"))
 
     def start(self, env):
         import params
