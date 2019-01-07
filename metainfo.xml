@@ -6,7 +6,7 @@
             <name>KYLIN</name>
             <displayName>Kylin</displayName>
             <comment>Kylin是一款开源的分布式数据分析工具，基于hadoop之上的sql查询接口。</comment>
-            <version>5.2.1</version>
+            <version>2.5.1</version>
             <components>
                 <component>
                     <name>KYLIN_ALL</name>

@@ -8,7 +8,7 @@ service_packagedir = os.path.realpath(__file__).split('/scripts')[0]
 tmp_dir = Script.get_tmp_dir()
 
 ambari_server_hostname = config['clusterHostInfo']['ambari_server_host'][0]
-kylin_download = os.path.join('http://', ambari_server_hostname, 'kylin/kylin-5.2.1.tar.gz')
+kylin_download = os.path.join('http://', ambari_server_hostname, 'xdataepel/centos/kylin-2.5.1.tar.gz')
 
 kylin_user = config['configurations']['kylin']['kylin_user']
 kylin_group = config['configurations']['kylin']['kylin_group']
@@ -42,7 +42,7 @@ kylin_servers = ';'.join("server " + i + ":" + kylin_web_port for i in server_cl
 hadoop_conf_dir = kylin_install_dir + "/conf/hadoop_conf"
 
 # ngnix
-nginx_download = os.path.join('http://', ambari_server_hostname, 'kylin/nginx-1.8.1.tar.gz')
+nginx_download = os.path.join('http://', ambari_server_hostname, 'xdataepel/centos/nginx-1.8.1.tar.gz')
 nginx_install_dir = config['configurations']['nginx']['nginx_install_dir']
 nginx_conf = config['configurations']['nginx']['nginx_conf']
 nginx_port = config['configurations']['nginx']['nginx_port']

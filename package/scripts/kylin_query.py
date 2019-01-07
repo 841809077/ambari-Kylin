@@ -40,8 +40,16 @@ class KylinQuery(Script):
         cmd = format("chown -R {kylin_user}:{kylin_group} {kylin_install_dir}")
         Execute(cmd)
         # create hadoop_conf_dir
+        File(format("{tmp_dir}/kylin_init.sh"),
+             content=Template("init.sh.j2"),
+             owner=params.kylin_user,
+             group=params.kylin_group,
+             mode=0o700
+             )
         cmd = format("sh {tmp_dir}/kylin_init.sh")
         Execute(cmd, user=params.kylin_user)
+        cmd = format("sh {kylin_install_dir}/bin/check-env.sh")
+        Execute(cmd, user="hdfs")
 
     def configure(self, env):
         import params
@@ -52,12 +60,6 @@ class KylinQuery(Script):
              group=params.kylin_group,
              content=kylin_properties)
 
-        File(format("{tmp_dir}/kylin_init.sh"),
-             content=Template("init.sh.j2"),
-             owner=params.kylin_user,
-             group=params.kylin_group,
-             mode=0o700
-             )
         Execute(format("chown -R {kylin_user}:{kylin_group} {kylin_log_dir} {kylin_pid_dir}"))
 
     def start(self, env):
