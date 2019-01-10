@@ -30,12 +30,12 @@ class KylinQuery(Script):
                   group=params.kylin_group,
                   create_parents=True
                   )
-        # download kylin-5.2.1.tar.gz
-        Execute('wget {0} -O kylin-5.2.1.tar.gz'.format(params.kylin_download))
+        # download kylin-2.5.1.tar.gz
+        Execute('wget {0} -O kylin-2.5.1.tar.gz'.format(params.kylin_download))
         # Install kylin
-        Execute('tar -zxvf kylin-5.2.1.tar.gz -C {0}'.format(params.kylin_install_dir))
+        Execute('tar -zxvf kylin-2.5.1.tar.gz -C {0}'.format(params.kylin_install_dir))
         # Remove kylin installation file
-        Execute('rm -rf kylin-5.2.1.tar.gz')
+        Execute('rm -rf kylin-2.5.1.tar.gz')
         # Ensure all files owned by kylin user:group
         cmd = format("chown -R {kylin_user}:{kylin_group} {kylin_install_dir}")
         Execute(cmd)
@@ -48,8 +48,6 @@ class KylinQuery(Script):
              )
         cmd = format("sh {tmp_dir}/kylin_init.sh")
         Execute(cmd, user=params.kylin_user)
-        cmd = format("sh {kylin_install_dir}/bin/check-env.sh")
-        Execute(cmd, user="hdfs")
 
     def configure(self, env):
         import params
@@ -59,8 +57,9 @@ class KylinQuery(Script):
              owner=params.kylin_user,
              group=params.kylin_group,
              content=kylin_properties)
-
         Execute(format("chown -R {kylin_user}:{kylin_group} {kylin_log_dir} {kylin_pid_dir}"))
+        cmd = format("sh {kylin_install_dir}/bin/check-env.sh")
+        Execute(cmd, user="hdfs")
 
     def start(self, env):
         import params
