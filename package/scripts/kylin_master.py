@@ -25,8 +25,6 @@ class KylinMaster(Script):
         Directory([params.kylin_install_dir, params.kylin_log_dir, params.kylin_pid_dir],
                   mode=0755,
                   cd_access='a',
-                  owner=params.kylin_user,
-                  group=params.kylin_group,
                   create_parents=True
                   )
         # download kylin-2.5.1.tar.gz
@@ -45,8 +43,12 @@ class KylinMaster(Script):
              group=params.kylin_group,
              mode=0o700
              )
-        cmd = format("sh {tmp_dir}/kylin_init.sh")
-        Execute(cmd, user=params.kylin_user)
+        File(format("{tmp_dir}/kylin_env.rc"),
+             content=Template("env.rc.j2"),
+             owner=params.kylin_user,
+             group=params.kylin_group,
+             mode=0o700
+             )
 
     def configure(self, env):
         import params
@@ -58,6 +60,8 @@ class KylinMaster(Script):
              group=params.kylin_group,
              content=kylin_properties)
         Execute(format("chown -R {kylin_user}:{kylin_group} {kylin_log_dir} {kylin_pid_dir}"))
+        cmd = format("sh {tmp_dir}/kylin_init.sh")
+        Execute(cmd, user=params.kylin_user)
         cmd = format("sh {kylin_install_dir}/bin/check-env.sh")
         Execute(cmd, user="hdfs")
 
@@ -66,7 +70,7 @@ class KylinMaster(Script):
         env.set_params(params)
         self.configure(env)
         cmd = format(
-            "{kylin_install_dir}/bin/kylin.sh start;cp -rf {kylin_install_dir}/pid {kylin_pid_file}")
+            ". {tmp_dir}/kylin_env.rc;{kylin_install_dir}/bin/kylin.sh start;cp -rf {kylin_install_dir}/pid {kylin_pid_file}")
         Execute(cmd, user=params.kylin_user)
 
     def stop(self, env):

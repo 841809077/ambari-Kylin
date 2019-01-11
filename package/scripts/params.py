@@ -17,7 +17,6 @@ kylin_log_dir = config['configurations']['kylin']['kylin_log_dir']
 kylin_pid_dir = config['configurations']['kylin']['kylin_pid_dir']
 kylin_pid_file = format("{kylin_pid_dir}/kylin.pid")
 
-hdp_version = default("/commandParams/version", None)
 kylin_web_port = config['configurations']['kylin']['kylin_web_port']
 
 kylin_properties = config['configurations']['kylin']['kylin_properties']
