@@ -64,6 +64,7 @@ class KylinQuery(Script):
         Execute(cmd, user=params.kylin_user)
         cmd = format("sh {kylin_install_dir}/bin/check-env.sh")
         Execute(cmd, user="hdfs")
+        Execute("hadoop fs -chown -R kylin:hdfs /kylin", user="hdfs")
 
     def start(self, env):
         import params
