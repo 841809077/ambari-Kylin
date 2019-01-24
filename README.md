@@ -20,6 +20,26 @@ Ambari集成Apache Kylin服务
 
 ---
 
+> 部署步骤：
+
+1. 将Kylin和Nginx的源码包放到Ambari主节点的`/var/www/html/kylin`中，不需要解压。
+2. 这里我选择的stack版本是`2.6`，执行一下命令：
+
+```shell
+cd /var/lib/ambari-server/resources/stacks/HDP/2.6/services
+mkdir KYLIN
+# 将ambari-Kylin项目拷贝到KYLIN目录下
+git clone https://github.com/841809077/ambari-Kylin.git /var/lib/ambari-server/resources/stacks/HDP/2.6/services/KYLIN
+```
+
+最终如图所示：
+
+![](https://raw.githubusercontent.com/841809077/blog-img/master/20190101/20190124234507.jpg)
+
+3. 重启ambari：`ambari-server restart`
+
+---
+
 > Kylin部署方式
 
 目前采用的`Kylin`部署集群方式相对来说简单，只需要增加`Kylin`的节点数，因为`Kylin`的元数据（`Metadata`）是存储在`HBase`中，只需要在`Kylin`中配置，让`Kylin`的每个节点都能访问同一个`Metadata`表就形成了`Kylin`集群（`kylin.metadata.url` 值相同）。并且`Kylin`集群中只有一个`Kylin`实例运行任务引擎（`kylin.server.mode＝all`)，其它`Kylin`实例都是查询引擎(`kylin.server.mode=query`)模式。
