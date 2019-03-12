@@ -45,7 +45,7 @@ hive_server_host = default("/clusterHostInfo/hive_server_hosts", ['localhost'])[
 hive_server_port = default('/configurations/hive-site/hive.server2.thrift.port', "10000")
 
 # ngnix
-nginx_download = os.path.join('http://', ambari_server_hostname, 'nginx/nginx-1.8.1.tar.gz')
+nginx_download = os.path.join('http://', ambari_server_hostname, 'kylin/nginx-1.8.1.tar.gz')
 nginx_install_dir = config['configurations']['nginx']['nginx_install_dir']
 nginx_conf = config['configurations']['nginx']['nginx_conf']
 nginx_port = config['configurations']['nginx']['nginx_port']
