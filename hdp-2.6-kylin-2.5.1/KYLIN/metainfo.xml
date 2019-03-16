@@ -19,6 +19,9 @@
                         <scriptType>PYTHON</scriptType>
                         <timeout>600</timeout>
                     </commandScript>
+                    <configuration-dependencies>
+                        <config-type>kylin</config-type>
+                    </configuration-dependencies>
                 </component>
                 <component>
                     <name>KYLIN_QUERY</name>
@@ -31,6 +34,9 @@
                         <scriptType>PYTHON</scriptType>
                         <timeout>600</timeout>
                     </commandScript>
+                    <configuration-dependencies>
+                        <config-type>kylin</config-type>
+                    </configuration-dependencies>
                 </component>
                 <component>
                     <name>NGINX_SERVER</name>
@@ -43,6 +49,9 @@
                         <scriptType>PYTHON</scriptType>
                         <timeout>600</timeout>
                     </commandScript>
+                    <configuration-dependencies>
+                        <config-type>nginx</config-type>
+                    </configuration-dependencies>
                 </component>
             </components>
 
@@ -64,11 +73,6 @@
                     <default>true</default>
                 </quickLinksConfiguration>
             </quickLinksConfigurations>
-
-            <configuration-dependencies>
-                <config-type>kylin</config-type>
-                <config-type>nginx</config-type>
-            </configuration-dependencies>
 
             <restartRequiredAfterChange>false</restartRequiredAfterChange>
         </service>

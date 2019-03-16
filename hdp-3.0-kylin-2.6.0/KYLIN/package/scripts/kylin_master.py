@@ -13,12 +13,12 @@ class KylinMaster(Script):
                   cd_access='a',
                   create_parents=True
                   )
-        # download kylin-2.5.1.tar.gz
-        Execute('wget {0} -O kylin-2.5.1.tar.gz'.format(params.kylin_download))
+        # download kylin-2.6.0.tar.gz
+        Execute('wget {0} -O kylin-2.6.0.tar.gz'.format(params.kylin_download))
         # Install kylin
-        Execute('tar -zxvf kylin-2.5.1.tar.gz -C {0}'.format(params.kylin_install_dir))
+        Execute('tar -zxvf kylin-2.6.0.tar.gz -C {0}'.format(params.kylin_install_dir))
         # Remove kylin installation file
-        Execute('rm -rf kylin-2.5.1.tar.gz')
+        Execute('rm -rf kylin-2.6.0.tar.gz')
         # Ensure all files owned by hdfs user:group
         cmd = format("chown -R hdfs:hdfs {kylin_install_dir}")
         Execute(cmd)

@@ -16,11 +16,11 @@ class NginxMaster(Script):
                   cd_access='a',
                   create_parents=True
                   )
-        # download kylin-5.2.1.tar.gz
+        # download nginx-1.8.1.tar.gz
         Execute('wget {0} -O nginx-1.8.1.tar.gz'.format(params.nginx_download))
-        # Install kylin
+        # Install nginx
         Execute('tar -zxvf nginx-1.8.1.tar.gz -C {0}'.format(params.nginx_install_dir))
-        # Remove kylin installation file
+        # Remove nginx installation file
         Execute('rm -rf nginx-1.8.1.tar.gz')
 
     def configure(self, env):
