@@ -64,6 +64,7 @@ class KylinQuery(Script):
         Execute(cmd, user=params.kylin_user)
         cmd = format("sh {kylin_install_dir}/bin/check-env.sh")
         Execute(cmd, user="hdfs")
+        # chown kylin:hdfs to /kylin
         Execute("hadoop fs -chown -R kylin:hdfs /kylin", user="hdfs")
 
     def start(self, env):
@@ -71,7 +72,7 @@ class KylinQuery(Script):
         env.set_params(params)
         self.configure(env)
         cmd = format(
-            ". {tmp_dir}/kylin_env.rc;{kylin_install_dir}/bin/kylin.sh start;cp -rf {kylin_install_dir}/pid {kylin_pid_file}")
+            ". {tmp_dir}/kylin_env.rc;{kylin_install_dir}/bin/kylin.sh start;sleep 5s;cp -rf {kylin_install_dir}/pid {kylin_pid_file}")
         Execute(cmd, user=params.kylin_user)
 
     def stop(self, env):
