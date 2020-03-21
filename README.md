@@ -44,7 +44,7 @@ Ambari集成Apache Kylin服务
 
    最终如图所示：
 
-   ![](https://raw.githubusercontent.com/841809077/blog-img/master/20190101/20190124234507.jpg)
+   ![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20190101/20190124234507.jpg)
 
 3. 重启ambari：`ambari-server restart`
 
@@ -61,7 +61,7 @@ Ambari集成Apache Kylin服务
 
    最终如图所示：
 
-   ![](https://raw.githubusercontent.com/841809077/blog-img/master/20190301/20190312220020.jpg)
+   ![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20190301/20190312220020.jpg)
 
 3. 重启ambari：`ambari-server restart`
 
@@ -105,17 +105,17 @@ Ambari集成Apache Kylin服务
 
 **HDP3.0-kylin2.5.1：**
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181214222045.jpg)
+![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20181110/20181214222045.jpg)
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181214223927.png)
+![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20181110/20181214223927.png)
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181213234222.jpg)
+![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20181110/20181213234222.jpg)
 
 **HDP3.0-kylin2.6.0：**
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20190301/20190312220225.jpg)
+![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20190301/20190312220225.jpg)
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20190301/20190312220751.jpg)
+![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20190301/20190312220751.jpg)
 
 ---
 
@@ -135,4 +135,4 @@ kylin + nginx 源码包太大，gitgub上传不了，并且**上述还拥有的�
 
 上述功能如果感兴趣的，可以**微信搜索公众号私聊我：大数据实战演练**或者**扫描下方二维码关注**即可：
 
-![](https://raw.githubusercontent.com/841809077/blog-img/master/20181110/20181213235322.png)	
+![](https://cdn.jsdelivr.net/gh/841809077/blog-img/20181110/20181213235322.png)	
